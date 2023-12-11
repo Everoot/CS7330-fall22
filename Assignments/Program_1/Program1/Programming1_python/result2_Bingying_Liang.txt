@@ -1,0 +1,172 @@
+Successful insertion
+-----------------------------
+Info already exists
+-----------------------------
+Successful Deletion
+-----------------------------
+Info does not exists
+-----------------------------
+Top Tier Restaurant
+Houston TX
+Not found
+-----------------------------
+Not found
+-----------------------------
+McD
+Dallas TX
+Chicken Supplier 1 
+Egg Supplier 1 
+-----------------------------
+Eating Good
+Dallas GA
+Orange This supplier Great Foods 
+-----------------------------
+McD Dallas TX
+-----------------------------
+Not found
+-----------------------------
+[
+    {
+        "_id": {
+            "$oid": "636554ffc11f6486f904975e"
+        },
+        "restaurant_name": "Top Tier Restaurant",
+        "city": "Houston",
+        "state": "TX"
+    },
+    {
+        "_id": {
+            "$oid": "636554ffc11f6486f904975f"
+        },
+        "restaurant_name": "McD",
+        "city": "Dallas",
+        "state": "TX"
+    },
+    {
+        "_id": {
+            "$oid": "636554ffc11f6486f9049760"
+        },
+        "restaurant_name": "Eating Good",
+        "city": "Dallas",
+        "state": "GA"
+    }
+]
+-----------------------------
+[
+    {
+        "_id": {
+            "$oid": "63655500c11f6486f9049761"
+        },
+        "restaurant_name": "McD",
+        "supplier_name": "Supplier 1",
+        "food": "Chicken",
+        "country": "USA"
+    },
+    {
+        "_id": {
+            "$oid": "63655500c11f6486f9049762"
+        },
+        "restaurant_name": "Eating Good",
+        "supplier_name": "Great Foods",
+        "food": "Orange",
+        "country": "Mexico"
+    },
+    {
+        "_id": {
+            "$oid": "63655500c11f6486f9049763"
+        },
+        "restaurant_name": "McD",
+        "supplier_name": "Supplier 1",
+        "food": "Egg",
+        "country": "Canada"
+    },
+    {
+        "_id": {
+            "$oid": "63655500c11f6486f9049764"
+        },
+        "restaurant_name": "Eating Good",
+        "supplier_name": "This supplier",
+        "food": "Orange",
+        "country": "Mexico"
+    }
+]
+-----------------------------
+[
+    {
+        "_id": {
+            "$oid": "63655500c11f6486f9049765"
+        },
+        "supplier_name": "Supplier 1",
+        "supplier_city": "Houston",
+        "supplier_state": "TX",
+        "supplier_number": "3",
+        "supplier_food": [
+            {
+                "food": "Chicken",
+                "country": "USA"
+            },
+            {
+                "food": "Egg",
+                "country": "Canada"
+            },
+            {
+                "food": "Chicken",
+                "country": "China"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "63655500c11f6486f9049766"
+        },
+        "supplier_name": "This supplier",
+        "supplier_city": "Dallas",
+        "supplier_state": "TX",
+        "supplier_number": "2",
+        "supplier_food": [
+            {
+                "food": "Orange",
+                "country": "Mexico"
+            },
+            {
+                "food": "Avocado",
+                "country": "Mexico"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "63655500c11f6486f9049767"
+        },
+        "supplier_name": "Great Foods",
+        "supplier_city": "Seattle",
+        "supplier_state": "WA",
+        "supplier_number": "6",
+        "supplier_food": [
+            {
+                "food": "Orange",
+                "country": "Mexico"
+            },
+            {
+                "food": "Orange",
+                "country": "USA"
+            },
+            {
+                "food": "Banana",
+                "country": "Panama"
+            },
+            {
+                "food": "Banana",
+                "country": "Italy"
+            },
+            {
+                "food": "Frog legs",
+                "country": "Hong Kong"
+            },
+            {
+                "food": "Frog legs",
+                "country": "France"
+            }
+        ]
+    }
+]

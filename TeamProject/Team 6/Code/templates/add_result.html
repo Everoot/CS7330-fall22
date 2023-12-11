@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a new League</title>
+
+</head>
+<body>
+    <div id = "container">
+        <div id = "header" style="background-color: #18def4;">
+            <h1 style = "margin-bottom: 0; text-align: center;">Add a result</h1>
+                    <button onclick ="window.location.href= 'http://127.0.0.1:5000/add'">Add</button>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/query'">Query</button>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/modify'">Modify</button>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/delete'">Delete</button>
+        </div>
+    </div>
+    <div id = "content" style = "background-color: #EEEEEE; text-align: center">
+
+        <form action="/add/add_result", method="post">
+            League name:<input type="text" name = "leaguename" placeholder="league name"><br>
+            Season name: <input type="number" name = "seasonname" placeholder="season name" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"><br>
+            Team A: <input type="text" name = "teamnamea" placeholder="team name A"><br>
+            Team B: <input type="text" name = "teamnameb" placeholder="team name B"><br>
+            Team A score: <input type="number" name = "scorea" placeholder="team name A score" onekey = 'onlyNumber(this)'><br>
+            Team B score: <input type="number" name ="scoreb" placeholder="team name B score" nekey = 'onlyNumber(this)' ><br>
+            Game date: <input type = "date" name = "gamedate" placeholder="game date">
+            <button onclick>Submit</button><br>
+            <span style ="color: red">{{error}} </span><br>
+            <span style ="color: green">{{result}} </span><br>
+        </form>
+    </div>
+</body>
+</html>

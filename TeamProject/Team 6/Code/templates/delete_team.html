@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>project</title>
+</head>
+<body>
+
+<div id="container">
+
+<div id="header" style="background-color:#18def4;">
+<h1 style="margin-bottom:0; text-align: center;">Delete Team</h1>
+    <button onclick ="window.location.href= 'http://127.0.0.1:5000/add'">Add</button>
+    <button onclick ="window.location.href= 'http://127.0.0.1:5000/query'">Query</button>
+    <button onclick ="window.location.href= 'http://127.0.0.1:5000/modify'">Modify</button>
+    <button onclick ="window.location.href= 'http://127.0.0.1:5000/delete'">Delete</button>
+</div>
+
+<div id="content" style="background-color:#EEEEEE;text-align:center;" >
+
+    <form action="/delete/delete_team" method="post">
+        Team: <input type="text" name="teamname">
+        <button onclick="myFunction()">Delete</button><br>
+        <span style ="color: red">{{error}} </span><br>
+        <span style ="color: green">{{result}} </span><br>
+        <script>
+            function myFunction(){
+                //alert("Add successful!");
+            }
+            </script>
+        </form>
+
+<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;"></div>
+
+</div>
+
+<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;"></div>
+
+</div>
+ 
+</body>
+</html>

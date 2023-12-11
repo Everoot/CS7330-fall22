@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a new game</title>
+
+</head>
+<body>
+    <div id = "container">
+        <div id = "header" style="background-color: #18def4;">
+            <h1 style = "margin-bottom: 0; text-align: center;">Add a new game</h1>
+                    <button onclick ="window.location.href= 'http://127.0.0.1:5000/add'">Add</button>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/query'">Query</button>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/modify'">Modify</button>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/delete'">Delete</button>
+
+        </div>
+    </div>
+    <div id = "content" style = "background-color: #EEEEEE; text-align: center">
+        <b>Manual adding</b>
+        <form action="/add/add_new_game", method = "post">
+            League name: <input type="text" name ="leaguename" placeholder="league name"><br>
+            Season name: <input type="number" name = "seasonname" placeholder="season name"
+                                onkeyup="this.value=this.value.replace(/\D/g,'')"
+                                onafterpaste="this.value=this.value.replace(/\D/g,'')"><br>
+            Team1 name:<input type="text" name = "teamnamea" placeholder="teamA name"><br>
+            Team2 name:<input type="text" name = "teamnameb" placeholder="teamB name"><br>
+            Game date: <input type="date" name = "gamedate" placeholder="mm/dd/yy" id = "seasonbegindate"><br>
+            <button onclick>Submit</button><br>
+            <span style ="color: red">{{error}} </span><br>
+            <span style ="color: green">{{result}} </span><br>
+        </form>
+            <button  onclick ="window.location.href= 'http://127.0.0.1:5000/add/add_new_game/generate_random_table'">Generate random table</button>
+
+    </div>
+</body>
+</html>

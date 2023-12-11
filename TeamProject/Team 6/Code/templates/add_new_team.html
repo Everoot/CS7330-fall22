@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a new League</title>
+
+</head>
+<body>
+    <div id = "container">
+        <div id = "header" style="background-color: #18def4;">
+            <h1 style = "margin-bottom: 0; text-align: center;">Add a new Team</h1>
+                    <button onclick ="window.location.href= 'http://127.0.0.1:5000/add'">Add</button>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/query'">Query</button>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/modify'">Modify</button>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/delete'">Delete</button>
+        </div>
+    </div>
+    <div id = "content" style = "background-color: #EEEEEE; text-align: center">
+        <form action="/add/add_new_team", method = "post">
+            Team name:<input type="text" name = "teamname" placeholder="team name"><br>
+            State: <input type="text" name = "teamstate" placeholder="team state"><br>
+            City: <input type="text" name = "teamcity" placeholder="city"><br>
+            Field/Count: <input type="text" name = "teamfield" placeholder="field/count"><br>
+            Rating: <input type="number" name="teamrating" placeholoder="number"><br>
+            League name: <input type="text" name ="leaguename" placeholder="league name"><br>
+            <button onclick>Submit</button><br>
+            <span style ="color: red">{{error}} </span><br>
+            <span style ="color: green">{{result}} </span><br>
+        </form>
+    </div>
+</body>
+</html>

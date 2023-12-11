@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>query_menu</title>
+
+</head>
+<body>
+    <div id = "container">
+        <div id = "header" style="background-color: #18def4;">
+            <h1 style = "margin-bottom: 0; text-align: center;">Query Menu</h1>
+            <button onclick ="window.location.href= 'http://127.0.0.1:5000/add'">Add</button>
+            <button onclick ="window.location.href= 'http://127.0.0.1:5000/query'">Query</button>
+            <button onclick ="window.location.href= 'http://127.0.0.1:5000/modify'">Modify</button>
+            <button onclick ="window.location.href= 'http://127.0.0.1:5000/delete'">Delete</button>
+        </div>
+    </div>
+    <div id = "content" style = "background-color: #EEEEEE; text-align: center">
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/query/query_basic_league'">League basic query</button><br>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/query/query_detial_league'">League more detail query</button><br>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/query/query_basic_team'">Team basic query</button><br>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/query/query_detail_team'">Team more detail query</button><br>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/query/query_game'">Game query</button><br>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/query/query_season'">Season query</button><br>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/query/query_rating'">Rating query</button><br>
+    </div>
+</body>
+</html>

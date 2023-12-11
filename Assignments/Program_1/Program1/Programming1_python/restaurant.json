@@ -1,0 +1,17 @@
+[
+    {
+        "restaurant_name": "Top Tier Restaurant",
+        "city": "Houston",
+        "state": "TX"
+    },
+    {
+        "restaurant_name": "McD",
+        "city": "Dallas",
+        "state": "TX"
+    },
+    {
+        "restaurant_name": "Eating Good",
+        "city": "Dallas",
+        "state": "GA"
+    }
+]

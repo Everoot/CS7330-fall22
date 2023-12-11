@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>login</title>
+<style>
+body{text-align:center}
+.center{
+    display: table;
+    margin: 0 auto;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+</style>
+
+</head>
+<body>
+
+<div id="container">
+
+<div id="header" style="background-color:#18def4;">
+<h1 style="margin-bottom:0; text-align: center;">Login</h1></div>
+
+<div id="content" style="background-color:#EEEEEE; text-align: center">
+    <form method = "post">
+        Username: <input type="text" name="user"><br>
+        Password: <input type="password" name="pwd"><br>
+        <input type="submit" value="Submit"><br>
+        <span style="color:red;">{{error}}</span><br>
+    </form>
+</div>
+
+<div>
+</div>
+    <button onclick ="window.location.href= 'http://127.0.0.1:5000/register'">Register</button>
+    <button onclick ="window.location.href= 'http://127.0.0.1:5000/edit'">Edit</button>
+
+</body>
+</html>

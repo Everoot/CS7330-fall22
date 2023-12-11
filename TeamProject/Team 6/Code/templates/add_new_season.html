@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a new season</title>
+
+</head>
+<body>
+    <div id = "container">
+        <div id = "header" style="background-color: #18def4;">
+            <h1 style = "margin-bottom: 0; text-align: center;">Add a new season</h1>
+                    <button onclick ="window.location.href= 'http://127.0.0.1:5000/add'">Add</button>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/query'">Query</button>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/modify'">Modify</button>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/delete'">Delete</button>
+        </div>
+    </div>
+    <div id = "content" style = "background-color: #EEEEEE; text-align: center">
+        <form action="/add/add_new_season", method = "post">
+            League name:<input type="text" name = "leaguename" placeholder="league name"><br>
+            Season name: <input type="number" name = "seasonname" placeholder="season name"
+                                onkeyup="this.value=this.value.replace(/\D/g,'')"
+                                onafterpaste="this.value=this.value.replace(/\D/g,'')"><br>
+            Begin date: <input type="date" name = "seasonbegindate" placeholder="mm/dd/yy" id = "seasonbegindate"><br>
+            End date: <input type="date" name = "seasonenddate" placeholder="mm/dd/yy" id = "seasonenddate"><br>
+            Season state: <input type = "text" name = "seasonstate" placeholder="season state"><br>
+            Season city: <input type = "text" name = "seasoncity" placeholder="season city"><br>
+            Team field/count: <input type = "text" name = "seasonfield" placeholder="field/count"><br>
+            <!-- Times of matches：<input type = "number" name = "timesmatches" placeholoder="number"
+            onkeyup="this.value=this.value.replace(/\D/g,'')"
+            onafterpaste="this.value=this.value.replace(/\D/g,'')"><br>
+            Whether create random table: <input type = "text" name = "whetherrandomtable" placeholder ="yes or no"><br>
+            -->
+            <button onclick>Submit</button><br>
+            <span style ="color: red">{{error}} </span><br>
+            <span style ="color: green">{{result}} </span><br>
+
+        </form>
+        </div>
+</body>
+</html>

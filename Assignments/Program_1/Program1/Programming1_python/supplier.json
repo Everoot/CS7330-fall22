@@ -1,0 +1,70 @@
+[
+    {
+        "supplier_name": "Supplier 1",
+        "supplier_city": "Houston",
+        "supplier_state": "TX",
+        "supplier_number": "3",
+        "supplier_food": [
+            {
+                "food": "Chicken",
+                "country": "USA"
+            },
+            {
+                "food": "Egg",
+                "country": "Canada"
+            },
+            {
+                "food": "Chicken",
+                "country": "China"
+            }
+        ]
+    },
+    {
+        "supplier_name": "This supplier",
+        "supplier_city": "Dallas",
+        "supplier_state": "TX",
+        "supplier_number": "2",
+        "supplier_food": [
+            {
+                "food": "Orange",
+                "country": "Mexico"
+            },
+            {
+                "food": "Avocado",
+                "country": "Mexico"
+            }
+        ]
+    },
+    {
+        "supplier_name": "Great Foods",
+        "supplier_city": "Seattle",
+        "supplier_state": "WA",
+        "supplier_number": "6",
+        "supplier_food": [
+            {
+                "food": "Orange",
+                "country": "Mexico"
+            },
+            {
+                "food": "Orange",
+                "country": "USA"
+            },
+            {
+                "food": "Banana",
+                "country": "Panama"
+            },
+            {
+                "food": "Banana",
+                "country": "Italy"
+            },
+            {
+                "food": "Frog legs",
+                "country": "Hong Kong"
+            },
+            {
+                "food": "Frog legs",
+                "country": "France"
+            }
+        ]
+    }
+]

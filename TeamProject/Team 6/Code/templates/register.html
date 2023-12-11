@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>login</title>
+
+</head>
+<body>
+<div id="container">
+<div id="header" style="background-color:#18def4;">
+<h1 style="margin-bottom:0; text-align: center;">Register</h1></div>
+<div id="content" style="background-color:#EEEEEE; text-align: center">
+    <form method = "post" onSubmit="return checkpassword()">
+        Username: <input type="text" name="user" id ="user"><br>
+        Password: <input type="password" name="pwd" id="pw"><br>
+        Repassword: <input type = "password" name = "pwd" id ="repw"><br>
+        <button name="click"> Register </button>
+
+    </form>
+            <span style ="color: red">{{error}} </span><br>
+</div>
+    <button onclick ="window.location.href= 'http://127.0.0.1:5000/'">Return</button>
+<script type="text/javascript">
+    function checkpassword(){
+        var username = document.getElementById("user").value;
+        var password = document.getElementById("pw").value;
+        var repassword = document.getElementById("repw").value;
+        var len = password.length;
+
+        if (username ==="" || username === null || username === undefined){
+            alert("Username can not be null")
+            return false;
+        }else{
+            if(password == repassword){
+                if (len < 6){
+                    alert("The password should at least 6 characters!")
+                    return false;
+                }else{
+                    if (len > 20) {
+                        alert("The password should less than 20 characters!")
+                        return false;
+                    }else{
+                        return true;
+                    }
+                }
+            }else{
+                alert("Two times password are different, please try again!")
+                return false;
+            }
+        }
+    }
+    </script>
+</div>
+</body>
+</html>

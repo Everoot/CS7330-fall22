@@ -1,0 +1,48 @@
+<div id="header" style="background-color:#18def4;">
+<h1 style="margin-bottom:0; text-align: center;">Edit</h1></div>
+
+<div id="content" style="background-color:#EEEEEE;text-align: center">
+
+    <form method = "post" onsubmit="return checkpassword()">
+        Username: <input type="text" name="user" id ="user"><br>
+        Old Password: <input type="password" name="old_pwd" id="opw"><br>
+        New Password: <input type = "password" name = "new_pwd" id ="npw"><br>
+        <button name = "click"> Edit </button>
+    </form>
+        <span style ="color: red">{{error}} </span><br>
+
+</div>
+    <button onclick ="window.location.href= 'http://127.0.0.1:5000/';">Return</button>
+<script type="text/javascript">
+    function checkpassword(){
+        var username = document.getElementById("user").value;
+        var opassword = document.getElementById("opw").value;
+        var npassword = document.getElementById("npw").value;
+        var len = npassword.length;
+
+        if (username ==="" || username === null || username === undefined){
+            alert("Username can not be null")
+            return false;
+        }else{
+            if(opassword == nrepassword){
+                alert("Two times password are same, please try again!")
+            return false;
+        }else{
+                if (len < 6){
+                    alert("The password should at least 6 characters!")
+                    return false;
+                }else {
+                    if (len > 20) {
+                        alert("The password should less than 20 characters!")
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+            }
+        }
+
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{{ url_for('static', filename ='jquery.json-viewer.js')}}"></script>
+    <link href="{{url_for('static', filename ='jquery.json-viewer.css')}}" type="text/css" rel="stylesheet">
+    <title>Add a new game</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid #333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+    <script>
+            $(function() {
+                function renderJson() {
+                    var input = eval('(' + $('#json-input').val() + ')');
+                    var options = {
+                        collapsed: $('#collapsed').is(':checked'),
+                        rootCollapsable: $('#root-collapsable').is(':checked'),
+                        withQuotes: $('#with-quotes').is(':checked'),
+                        withLinks: $('#with-links').is(':checked')
+                    };
+                    $('#json-renderer').jsonViewer(input, options);
+                }
+            // Generate on click
+            $('#btn-json-viewer').click(renderJson);
+            // Generate on option change
+            $('p.options input[type=checkbox]').click(renderJson);
+            // Display JSON sample on page load
+            renderJson();
+            });
+        </script>
+
+</head>
+<body>
+    <div id = "container">
+        <div id = "header" style="background-color: #18def4;">
+            <h1 style = "margin-bottom: 0; text-align: center;">Generate random games</h1>
+                    <button onclick ="window.location.href= 'http://127.0.0.1:5000/add'">Add</button>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/query'">Query</button>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/modify'">Modify</button>
+        <button onclick ="window.location.href= 'http://127.0.0.1:5000/delete'">Delete</button><br>
+            <div style="text-align: right">
+            <button onclick ="window.location.href= 'http://127.0.0.1:5000/add/add_new_game'">Manual adding</button>
+            </div>
+        </div>
+
+    </div>
+    <div id = "content" style = "background-color: #EEEEEE; text-align: center">
+        <b>Generate random games</b>
+
+        <form action="/add/add_new_game/generate_random_table", method = "post">
+            League name: <input type="text" name ="leaguename" placeholder="league name"><br>
+            <!--Season name: <input type="number" name = "seasonname" placeholder="season name"
+                                onkeyup="this.value=this.value.replace(/\D/g,'')"
+                                onafterpaste="this.value=this.value.replace(/\D/g,'')"><br>
+                                -->
+            <!--Team1 name:<input type="text" name = "teamnamea" placeholder="teamA name"><br>
+            Team2 name:<input type="text" name = "teamnameb" placeholder="teamB name"><br>
+            Game date: <input type="date" name = "gamedate" placeholder="mm/dd/yy" id = "seasonbegindate"><br> -->
+            <button onclick>Submit</button><br>
+            <span style ="color: red">{{error}} </span><br>
+            <span style ="color: green">{{result}} </span><br>
+            <textarea id="json-input" autocomplete="off" style="display: none">{{db_table}}</textarea><br>
+
+
+                        <pre id = "json-renderer" ></pre>
+                    </form>
+
+
+
+    </div>
+</body>
+</html>

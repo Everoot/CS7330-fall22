@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Query game</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{{ url_for('static', filename ='jquery.json-viewer.js')}}"></script>
+    <link href="{{url_for('static', filename ='jquery.json-viewer.css')}}" type="text/css" rel="stylesheet">
+            <script>
+            $(function() {
+                function renderJson() {
+                    var input = eval('(' + $('#json-input').val() + ')');
+                    var options = {
+                        collapsed: $('#collapsed').is(':checked'),
+                        rootCollapsable: $('#root-collapsable').is(':checked'),
+                        withQuotes: $('#with-quotes').is(':checked'),
+                        withLinks: $('#with-links').is(':checked')
+                    };
+                    $('#json-renderer').jsonViewer(input, options);
+                }
+            // Generate on click
+            $('#btn-json-viewer').click(renderJson);
+            // Generate on option change
+            $('p.options input[type=checkbox]').click(renderJson);
+            // Display JSON sample on page load
+            renderJson();
+            });
+            </script>
+
+
+</head>
+<body>
+    <div id = "container">
+        <div id = "header" style="background-color: #18def4;">
+            <h1 style = "margin-bottom: 0; text-align: center;">Game query</h1>
+            <button onclick ="window.location.href= 'http://127.0.0.1:5000/add'">Add</button>
+            <button onclick ="window.location.href= 'http://127.0.0.1:5000/query'">Query</button>
+            <button onclick ="window.location.href= 'http://127.0.0.1:5000/modify'">Modify</button>
+            <button onclick ="window.location.href= 'http://127.0.0.1:5000/delete'">Delete</button>
+        </div>
+    </div>
+
+        <form action = "/query/query_game" method = "post">
+            <div id = "content" style = "background-color: #EEEEEE; text-align: center">
+            Team1: <input type="text" name = "teamnamea" placeholder="team name"><br>
+            Team2:<input type="text" name = "teamnameb" placeholder="team name"><br>
+            <input type="submit" value="Query"><br>
+                <span style ="color: red">{{error}} </span><br>
+                <textarea id="json-input" autocomplete="off" style="display: none">{{result}}</textarea>
+                Team1:<span>{{team1}}</span><br>
+                Team2:<span>{{team2}}</span><br>
+            </div>
+            <div id = "result" style="margin: 0 auto; width:min-content" >
+
+                Results:<pre id = "json-renderer"></pre>
+            </div>
+        </form>
+
+</body>
+</html>

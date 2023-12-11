@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态表格JavaScript</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <div><button id="confirm">确定</button></div>
+
+    <div>
+        <table>
+            <thead>
+                <th>th1</th>
+                <th>th2</th>
+                <th>th3</th>
+                <th>th4</th>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </div>
+</body>
+<script>
+$(document).ready(function () {
+    $("#confirm").click(function () {
+        $("#tbody").empty();  // 清空子元素
+        for(var i=0; i<10; i++) {  // 循环次数根据需求更改
+            var tr = document.createElement("tr"),
+                td1 = document.createElement("td"),
+                td2 = document.createElement("td"),
+                td3 = document.createElement("td"),
+                td4 = document.createElement("td");
+            td1.innerHTML = "数据1";  // 数据根据需求修改
+            td2.innerHTML = "数据2";
+            td3.innerHTML = "数据3";
+            td4.innerHTML = "数据4";
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+
+            var tbody = document.getElementById("tbody");
+            tbody.appendChild(tr);  // 插入子元素
+        }
+    })
+})
+</script>
+</html>

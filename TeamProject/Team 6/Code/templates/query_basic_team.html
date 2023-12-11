@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Query basic team</title>
+
+</head>
+<body>
+    <div id = "container">
+        <div id = "header" style="background-color: #18def4;">
+            <h1 style = "margin-bottom: 0; text-align: center;">Team basic information query</h1>
+            <button onclick ="window.location.href= 'http://127.0.0.1:5000/add'">Add</button>
+            <button onclick ="window.location.href= 'http://127.0.0.1:5000/query'">Query</button>
+            <button onclick ="window.location.href= 'http://127.0.0.1:5000/modify'">Modify</button>
+            <button onclick ="window.location.href= 'http://127.0.0.1:5000/delete'">Delete</button>
+        </div>
+    </div>
+    <div id = "content" style = "background-color: #EEEEEE; text-align: center">
+        <form action="/query/query_basic_team" method = "post">
+            Team name:<input type="text" name = "teamname" placeholder="team name">
+            <input type="submit" value="Query"><br>
+            <span style ="color: red">{{error}} </span><br>
+            <div id = "result" style="display: block; text-align: center">
+                    team name: <span>{{team_name}}</span><br>
+                    state: <span>{{state}}</span> <br>
+                    city name: <span>{{city}}</span> <br>
+                    field: <span>{{field}}</span><br>
+                    rating: <span>{{rating}}</span><br>
+                    <script>
+                    </script>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
